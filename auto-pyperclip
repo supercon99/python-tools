@@ -1,0 +1,9 @@
+#This script automatically copies and pastes from the contents of your clipboard.
+
+import pyperclip
+
+def copy_paste():
+    text = pyperclip.paste()  # Get the contents of the clipboard
+    pyperclip.copy(text)  # Set the contents of the clipboard
+
+copy_paste()
