@@ -1,4 +1,4 @@
-#This script fetches realm time stock prices using the alpha_vantage API.
+#This script fetches real time stock prices using the alpha_vantage API.
 
 import requests
 
