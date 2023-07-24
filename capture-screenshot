@@ -1,0 +1,10 @@
+#This script captures a screenshot and saves it to a file.
+
+import pyautogui
+
+def take_screenshot(filename):
+    screenshot = pyautogui.screenshot()
+    screenshot.save(filename)
+
+filename = "screenshot.png"
+take_screenshot(filename)
