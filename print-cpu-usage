@@ -1,0 +1,8 @@
+#I made this script to track and print CPU usage.
+
+import psutil
+
+def print_cpu_usage():
+    print(f"CPU usage: {psutil.cpu_percent()}%")
+
+print_cpu_usage()
