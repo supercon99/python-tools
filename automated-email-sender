@@ -1,3 +1,5 @@
+#This script sends an email from a Gmail account. Please replace placeholders with your own information and note that this method will require you to enable "Less secure app access" in your Google account.
+
 import smtplib
 
 def send_email(subject, message, from_addr, to_addr, password):
