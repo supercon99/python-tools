@@ -1,0 +1,12 @@
+#This script parses the latest posts from an RSS feed.
+
+import feedparser
+
+def parse_rss(url):
+    NewsFeed = feedparser.parse(url)
+    return NewsFeed.entries
+
+url = "http://feeds.bbci.co.uk/news/rss.xml"
+entries = parse_rss(url)
+for entry in entries:
+    print(entry.title)
