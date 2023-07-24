@@ -1,0 +1,12 @@
+#This script downloads the HTML content of a webpage, given its URL.
+
+import requests
+
+def download_webpage(url, filename):
+    response = requests.get(url)
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(response.text)
+
+url = "http://example.com"
+filename = "example.html"
+download_webpage(url, filename)
