@@ -1,0 +1,16 @@
+#This script merges multiple PDF documents into a single PDF.
+
+from PyPDF2 import PdfFileMerger
+
+def merge_pdfs(files, output):
+    merger = PdfFileMerger()
+    
+    for pdf in files:
+        merger.append(pdf)
+
+    merger.write(output)
+    merger.close()
+
+files = ["file1.pdf", "file2.pdf", "file3.pdf"]
+output = "merged.pdf"
+merge_pdfs(files, output)
