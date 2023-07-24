@@ -1,0 +1,9 @@
+#This script fetches and prints the public IP address of the device.
+
+import requests
+
+def get_ip():
+    ip = requests.get('https://api.ipify.org').text
+    print(f'My public IP address is: {ip}')
+
+get_ip()
