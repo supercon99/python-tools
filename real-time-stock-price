@@ -1,0 +1,12 @@
+#This script fetches realm time stock prices using the alpha_vantage API.
+
+import requests
+
+def get_stock_price(symbol):
+    url = f"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={symbol}&apikey=your_api_key"
+    data = requests.get(url).json()
+    return data["Global Quote"]["05. price"]
+
+symbol = "AAPL"
+price = get_stock_price(symbol)
+print(f"The current price of {symbol} is {price}")
