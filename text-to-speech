@@ -1,0 +1,11 @@
+#This script converts text to speech.
+
+from gtts import gTTS
+
+def text_to_speech(text, filename):
+    tts = gTTS(text=text, lang='en')
+    tts.save(filename)
+
+text = "Hello, world!"
+filename = "hello.mp3"
+text_to_speech(text, filename)
