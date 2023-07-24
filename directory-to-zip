@@ -1,0 +1,15 @@
+#This script compresses a directory into a .zip file.
+
+  import zipfile
+import os
+
+def zipdir(path, ziph):
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            ziph.write(os.path.join(root, file), 
+                       os.path.relpath(os.path.join(root, file), 
+                                       os.path.join(path, '..')))
+                    
+zipf = zipfile.ZipFile('Python.zip', 'w', zipfile.ZIP_DEFLATED)
+zipdir('/path/to/directory', zipf)
+zipf.close()
