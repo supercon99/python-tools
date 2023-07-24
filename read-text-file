@@ -1,0 +1,8 @@
+#This script reads a text file line by line and prints each line.
+
+def read_file_line_by_line(filename):
+    with open(filename, 'r') as file:
+        for line in file:
+            print(line.strip())
+
+read_file_line_by_line('example.txt')
