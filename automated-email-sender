@@ -1,0 +1,17 @@
+import smtplib
+
+def send_email(subject, message, from_addr, to_addr, password):
+    message = 'Subject: {}\n\n{}'.format(subject, message)
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(from_addr, password)
+    server.sendmail(from_addr, to_addr, message)
+    server.quit()
+
+subject = "Test Email"
+message = "This is a test email."
+from_addr = "your_email@gmail.com"
+to_addr = "receiver_email@gmail.com"
+password = "your_password"
+
+send_email(subject, message, from_addr, to_addr, password)
