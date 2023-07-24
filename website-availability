@@ -1,0 +1,14 @@
+#This script uses Python to check the availability of any website.
+
+import requests
+
+def check_website(url):
+    try:
+        response = requests.get(url)
+        return response.status_code
+    except requests.exceptions.RequestException as e:
+        return str(e)
+
+url = "https://www.example.com"
+status = check_website(url)
+print(f"The status of the website is: {status}")
