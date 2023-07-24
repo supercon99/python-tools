@@ -1,3 +1,5 @@
+#I made this script to convert any amount from one currency to another using current exchange rates from the exchangerate-api.
+
 import requests
 
 def convert_currency(amount, from_currency, to_currency):
