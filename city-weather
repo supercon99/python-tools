@@ -1,0 +1,13 @@
+#This script fetches the current weather for a specified city using the OpenWeatherMap API. Remember to replace 'your_api_key' with your own API key from OpenWeatherMap.
+#Please remember that for the scripts that make requests to APIs, you will need to install the requests library. You can do this by running pip install requests in your terminal. Also, replace placeholders like your_api_key with your actual keys.
+
+import requests
+
+def get_weather(city):
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=your_api_key"
+    data = requests.get(url).json()
+    return data["weather"][0]["description"]
+
+city = "New York"
+weather = get_weather(city)
+print(f"The current weather in {city} is {weather}.")
