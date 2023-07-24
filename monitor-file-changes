@@ -1,0 +1,19 @@
+#This script monitors a directory for any file changes.
+
+import time
+import os
+
+def monitor_changes(directory):
+    files_list = os.listdir(directory)
+    initial_snapshot = dict([(f, None) for f in files_list])
+    while True:
+        time.sleep(10)  # Delay between checks
+        latest_snapshot = dict([(f, None) for f in os.listdir(directory)])
+        added = [f for f in latest_snapshot if f not in initial_snapshot]
+        removed = [f for f in initial_snapshot if f not in latest_snapshot]
+        if added: print(f"Added: {', '.join(added)}")
+        if removed: print(f"Removed: {', '.join(removed)}")
+        initial_snapshot = latest_snapshot
+
+directory = "/path/to/directory"
+monitor_changes(directory)
