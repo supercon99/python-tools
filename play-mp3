@@ -1,0 +1,10 @@
+#This script plays an MP3 file.
+
+from pygame import mixer
+
+def play_music(file):
+    mixer.init()
+    mixer.music.load(file)
+    mixer.music.play()
+
+play_music('song.mp3')
