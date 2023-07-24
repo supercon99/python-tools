@@ -1,0 +1,10 @@
+#This script creates a calendar for a given year and month.
+
+import calendar
+
+def create_calendar(year, month):
+    return calendar.month(year, month)
+
+year = 2023
+month = 7
+print(create_calendar(year, month))
