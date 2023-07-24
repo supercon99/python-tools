@@ -1,0 +1,14 @@
+#This script sends a desktop notification.
+
+  from plyer import notification
+
+def send_notification(title, message):
+    notification.notify(
+        title=title,
+        message=message,
+        timeout=10
+    )
+
+title = "Hello"
+message = "This is a notification"
+send_notification(title, message)
