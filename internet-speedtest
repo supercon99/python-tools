@@ -1,0 +1,13 @@
+#This script checks the Internet speed using speedtest-cli.
+
+import speedtest
+
+def check_internet_speed():
+    s = speedtest.Speedtest()
+    download_speed = s.download() / (1024 * 1024)
+    upload_speed = s.upload() / (1024 * 1024)
+    return download_speed, upload_speed
+
+download_speed, upload_speed = check_internet_speed()
+print(f"Download Speed: {download_speed} Mbps")
+print(f"Upload Speed: {upload_speed} Mbps")
