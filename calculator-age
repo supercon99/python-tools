@@ -1,0 +1,11 @@
+#I made this script to calculate the age of a person by entering their birth date.
+
+from datetime import datetime
+
+def calculate_age(birthdate):
+    today = datetime.today()
+    return today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+
+birthdate = datetime(1990, 1, 1)
+age = calculate_age(birthdate)
+print(f"Age is: {age}")
