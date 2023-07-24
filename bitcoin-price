@@ -1,0 +1,11 @@
+#This script fetches the current Bitcoin price in USD.
+
+import requests
+
+def get_bitcoin_price():
+    URL = "https://www.coindesk.com/price/bitcoin"
+    data = requests.get(URL).json()
+    price = data["bpi"]["USD"]["rate"]
+    return price
+
+print(f"Bitcoin price is: {get_bitcoin_price()}")
