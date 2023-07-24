@@ -1,0 +1,13 @@
+#This script will download an image from a specified URL.
+
+import requests
+
+def download_image(url, filename):
+    response = requests.get(url, stream=True)
+    if response.status_code == 200:
+        with open(filename, 'wb') as f:
+            f.write(response.content)
+
+url = "https://example.com/image.jpg"
+filename = "downloaded_image.jpg"
+download_image(url, filename)
