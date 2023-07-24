@@ -1,0 +1,9 @@
+#This script runs a command in the system command line.
+
+import os
+
+def run_command(command):
+    os.system(command)
+
+command = "ls"
+run_command(command)
