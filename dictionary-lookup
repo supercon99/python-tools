@@ -1,0 +1,12 @@
+#This script will fetch the definition of a word using the Wordnik API.
+
+  import requests
+
+def get_definition(word):
+    url = f"https://api.wordnik.com/v4/word.json/{word}/definitions?limit=1&api_key=your_api_key"
+    data = requests.get(url).json()
+    return data[0]["text"]
+
+word = "python"
+definition = get_definition(word)
+print(f"The definition of {word} is: {definition}.")
