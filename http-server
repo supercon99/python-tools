@@ -1,0 +1,13 @@
+#This script starts a simple HTTP server.
+
+import http.server
+import socketserver
+
+def start_server(port):
+    Handler = http.server.SimpleHTTPRequestHandler
+    httpd = socketserver.TCPServer(("", port), Handler)
+    print(f"Serving at port {port}")
+    httpd.serve_forever()
+
+port = 8000
+start_server(port)
